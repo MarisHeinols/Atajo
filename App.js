@@ -1,21 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import Home from "./Screens/Home";
+import * as Font from "expo-font";
+import {AppLoading} from 'expo';
+import { AppNavigator } from "./Routes/drawer";
+
+
+const getFonts = () =>
+  Font.loadAsync({
+    "Arimo-regular": require("./assets/Fonts/Arimo-Regular.ttf"),
+    "Arimo-bold": require("./assets/Fonts/Arimo-Bold.ttf"),
+  });
+
+  
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const[fontsLoaded,setFontsLoaded]=useState(false);
+  if(fontsLoaded){
+    return( <AppNavigator></AppNavigator>
+  
+    );
+  }else {
+    return (
+      <AppLoading
+        startAsync={getFonts}
+        onFinish={() => setFontsLoaded(true)}
+      ></AppLoading>
+    );
+  }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  
+}
