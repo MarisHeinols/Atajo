@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import MapView from 'react-native-maps';
 import {StyleSheet,Dimensions} from 'react-native'
 
+
 let { width, height } = Dimensions.get("window");
+
 
 const Map =()=>{
     const aspect_Ratio = width / height;
-    const latitude_Delta = 0.1; 
+    const latitude_Delta = 0.01; 
     const longitude_Delta = latitude_Delta * aspect_Ratio;
     const [longitude,setLongitude]=useState();
     const [latitude,setLatitude]=useState();

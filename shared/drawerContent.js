@@ -85,7 +85,7 @@ const DrawerContent=(props)=>{
               )}
               label="About"
               onPress={() => {
-                props.navigation.navigate("Friends");
+                props.navigation.navigate("About");
               }}
             />
           </Drawer.Section>
