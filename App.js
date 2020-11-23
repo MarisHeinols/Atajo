@@ -5,6 +5,7 @@ import {AppLoading} from 'expo';
 import { AppNavigator } from "./Routes/drawer";
 
 
+
 const getFonts = () =>
   Font.loadAsync({
     "Arimo-regular": require("./assets/Fonts/Arimo-Regular.ttf"),
