@@ -23,7 +23,7 @@ const DrawerContent=(props)=>{
 
     return (
       <View style={{ flex: 1 }}>
-        <DrawerContentScrollView>
+        <DrawerContentScrollView keyboardShouldPersistTaps='handled'>
           <View style={styles.userInfoSection}>
             <View style={{ flexDirection: "row", marginTop: 2 * dvHeight }}>
               <Image

@@ -1,8 +1,6 @@
-import React from "react";
-import { StyleSheet, Image, View,Text } from "react-native";
-import { createDrawerNavigator, DrawerItem } from "@react-navigation/drawer";
-import { NavigationContainer } from "@react-navigation/native";
-import { MaterialIcons } from "@expo/vector-icons";
+import React, { useState } from "react";
+import { createDrawerNavigator} from "@react-navigation/drawer";
+import { NavigationContainer,DefaultTheme,DarkTheme } from "@react-navigation/native";
 import DrawerContent from '../shared/drawerContent';
 
 
@@ -26,8 +24,9 @@ export const RootDrawerNavigator = () => (
 
 
 
+
 export const AppNavigator = () => (
-  <NavigationContainer>
+  <NavigationContainer theme={DefaultTheme} >
     <RootDrawerNavigator />
   </NavigationContainer>
 );

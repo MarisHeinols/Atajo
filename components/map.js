@@ -35,9 +35,8 @@ const Map =()=>{
           longitudeDelta:longitude_Delta,
         }}
       >
-        <MapView.Marker
-          
-        />
+      
+
       </MapView>
     );
 }
