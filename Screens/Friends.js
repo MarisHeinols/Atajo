@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, View, FlatList, Image, Text } from 'react-native';
+import { ceil } from "react-native-reanimated";
 
 
 export default function Friends() {
@@ -12,7 +13,7 @@ export default function Friends() {
     { nick: "Bot", name: "Bot", surname: "Tom", key: "6", stat1: "online" },
     { nick: "Mapolo", name: "Marko", surname: "Polo", key: "7", stat2: "offline" },
     { nick: "Lui", name: "Luigi", surname: "Pasta", key: "8", stat1: "online" },
-    { nick: "xXx360xXx", name: "Ben", surname: "Ten", key: "9", stat2: "offline" },
+    { nick: "Xx360xX", name: "Ben", surname: "Ten", key: "9", stat2: "offline" },
     { nick: "Sashaljnik", name: "Sashka", surname: "Baripins", key: "10", stat1: "online" },
     { nick: "Vova", name: "Boriss", surname: "Shtorenburg", key: "11", stat2: "offline" },
     { nick: "Humlin", name: "Hummer", surname: "Havan", key: "12", stat1: "online" },
@@ -79,13 +80,16 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: "#5F0F40",
     backgroundColor: "#E36413",
+    borderRadius:5,
   },
   infoField: {
     flexDirection: "row",
     width: 100,
   },
   infoContainer: {
+    paddingTop:4,
     paddingLeft: 10,
+    width:110,
   },
   item: {
     fontSize: 20,
