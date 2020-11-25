@@ -39,7 +39,7 @@ export default function Acount() {
           <Icon
             name="trophy"
             style={{
-              color: "white",
+              color: "#E36413",
               fontSize: 20,
               paddingLeft: 10,
               paddingRight: 70,
@@ -53,7 +53,7 @@ export default function Acount() {
           <Icon
             name="map-marker"
             style={{
-              color: "white",
+              color: "#E36413",
               fontSize: 20,
               paddingLeft: 10,
               paddingRight: 70,
@@ -67,7 +67,7 @@ export default function Acount() {
           <Icon
             name="cogs"
             style={{
-              color: "white",
+              color: "#E36413",
               fontSize: 20,
               paddingLeft: 10,
               paddingRight: 70,
@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontSize: 15,
     fontWeight: "bold",
+    color: "#E36413",
   },
   accContainer: {
     paddingTop: 20,
@@ -106,28 +107,28 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
     borderWidth: 3,
-    backgroundColor: "#E36413",
+    backgroundColor: "white",
     borderColor: "#5F0F40",
     borderRadius: 20,
   },
   yourDetails: {
     fontSize: 15,
     fontWeight: "bold",
-    color: "white",
+    color: "black",
     fontStyle: "italic",
   },
   Box: {
     marginTop: 20,
     height: 50,
     borderWidth: 2,
-    borderColor: "white",
+    borderColor: "#E36413",
     alignItems: "center",
     flexDirection: "row",
     borderRadius: 5,
   },
   boxText: {
     fontSize: 20,
-    color: "white",
+    color: "#E36413",
     fontFamily: "Arimo-Bold",
   },
   banner: {
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
     fontFamily: "Arimo-bold",
   },
   HeadText: {
-    color: "#FFC59F",
+    color: "#A3A3A3",
     fontSize: 20,
     fontWeight: "500",
   },
