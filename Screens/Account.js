@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   boxText: {
     fontSize: 20,
     color: "#E36413",
-    fontFamily: "Arimo-Bold",
+    fontWeight: "500",
   },
   banner: {
     width: "100%",
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   bannerTXT: {
     color: "white",
-    fontFamily: "Arimo-bold",
+    fontWeight: "500",
   },
   HeadText: {
     color: "#A3A3A3",

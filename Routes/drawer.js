@@ -23,12 +23,6 @@ export const RootDrawerNavigator = () => (
 );
 
 
+export default RootDrawerNavigator();
 
 
-export const AppNavigator = () => (
-  <NavigationContainer theme={DefaultTheme} >
-    <RootDrawerNavigator />
-  </NavigationContainer>
-);
-
-export default AppNavigator;

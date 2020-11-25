@@ -80,16 +80,16 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: "#5F0F40",
     backgroundColor: "#E36413",
-    borderRadius:5,
+    borderRadius: 5,
   },
   infoField: {
     flexDirection: "row",
     width: 100,
   },
   infoContainer: {
-    paddingTop:4,
+    paddingTop: 4,
     paddingLeft: 10,
-    width:110,
+    width: 110,
   },
   item: {
     fontSize: 20,
@@ -130,6 +130,6 @@ const styles = StyleSheet.create({
   },
   bannerTXT: {
     color: "white",
-    fontFamily: "Arimo-bold",
-  }
-})
+    fontWeight: "500",
+  },
+});

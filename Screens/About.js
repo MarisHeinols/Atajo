@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
   },
   bannerTXT: {
     color: "white",
-    fontFamily: "Arimo-bold",
+    fontWeight:'500',
   }
 });

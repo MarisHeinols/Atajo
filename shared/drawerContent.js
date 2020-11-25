@@ -6,6 +6,7 @@ import {DrawerItem} from '@react-navigation/drawer';
 import {Avatar,Title,Caption,Paragraph,Drawer,Text,TouchableRipple,Switch} from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { RootDrawerNavigator } from "../Routes/drawer";
+import {AuthContext}from '../components/context';
 
 
 
@@ -15,6 +16,7 @@ const dvHeight = Dimensions.get("window").height / 100;
 
 const DrawerContent=(props)=>{
 
+    const {signOut}=React.useContext(AuthContext);
     const[cDarkTheme,setcDarkTheme] =react.useState(false);
 
     const toggleTheme=()=>{
@@ -115,6 +117,7 @@ const DrawerContent=(props)=>{
               />
             )}
             label="Sign out"
+            onPress={()=>{signOut()}}
           ></DrawerItem>
         </Drawer.Section>
       </View>
