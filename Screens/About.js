@@ -27,7 +27,7 @@ export default function About() {
         </View>
         <View style={{ paddingBottom: 70, paddingTop: 20}}>
           <View style={styles.dataField}>
-            <View style={globalStyles.parragrapg}>
+            <View style={globalStyles.parragraph}>
               <Text style={{ fontSize: 15, textAlign: "center", color: "#E36413" }}>
                 This  app is designed for pedestrian use in a city to find the shortest route from
                 point A to point B, providing scenic attractions along the way.
@@ -36,7 +36,7 @@ export default function About() {
           </View>
         </View>
         <View style={styles.banner}>
-          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Made by</Text>
+          <Text style={styles.OragreTXT}>Made by</Text>
           <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Māris Heinols</Text>
           <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Egija Graudiņa</Text>
           <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Aleksandrs Barbins</Text>
@@ -72,7 +72,16 @@ const styles = StyleSheet.create({
   dataField: {
     width: 290,
     borderWidth: 3,
+    paddingTop: 10,
+    paddingBottom: 10,
     borderColor: "#E36413",
     alignItems: "center",
   },
+  parragraph:{
+    alignItems:"center",
+    marginVertical:8,
+    lineHeight:20,
+    width:'70%',
+    paddingTop:20,
+  }
 });
