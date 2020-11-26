@@ -79,11 +79,11 @@ const SignUpScreen = ({ navigation }) => {
           <Text style={styles.text_header}>Sign Up!</Text>
         </View>
         <Animatable.View animation="fadeInUpBig" style={styles.footer}>
-          <Text style={styles.text_footer}>Email</Text>
+          <Text style={styles.text_footer}>Username</Text>
           <View style={styles.action}>
-            <FontAwesome name="cunt_01" color="#05375a" size={20} />
+            <FontAwesome name="user" color="#05375a" size={20} />
             <TextInput
-              placeholder="Your E-mail"
+              placeholder="Your Username"
               style={styles.textInput}
               autoCapitalize="none"
               onChangeText={(val) => textInputChange(val)}

@@ -8,47 +8,88 @@ import {
   TextInput,
   StyleSheet,
   StatusBar,
+  Alert
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 import { AuthContext } from "../components/context";
+import Users from '../components/users';
+
 
 const SignInScreen = ({ navigation }) => {
   const [data, setData] = React.useState({
-    email: "",
+    username: "",
     password: "",
     check_textInputChange: false,
     secureTextEntry: true,
+    isValidUser: true,
+    isValidPassword: true,
   });
   const { signIn } = React.useContext(AuthContext);
   const textInputChange = (val) => {
-    if (val.length != 0) {
+    if (val.trim().length >= 4) {
       setData({
         ...data,
-        email: val,
+        username: val,
         check_textInputChange: true,
+        isValidUser: true,
       });
     } else {
       setData({
         ...data,
-        email: val,
+        username: val,
         check_textInputChange: false,
+        isValidUser: false,
       });
     }
   };
 
   const handlePasswordChange = (val) => {
-    setData({
-      ...data,
-      epassword: val,
-    });
+    if (val.trim().length >= 8) {
+      setData({
+        ...data,
+        password: val,
+        isValidPassword:true,
+      });
+    }else{
+      setData({
+        ...data,
+        password: val,
+        isValidPassword:false,
+    })
+    }
   };
   const updateSecureTextEntry = () => {
     setData({
       ...data,
       secureTextEntry: !data.secureTextEntry,
     });
+  };
+  const handleValidUser = (val) => {
+    if (val.trim().length >= 4) {
+      setData({
+        ...data,
+        isValidUser: true,
+      });
+    } else {
+      setData({
+        ...data,
+        isValidUser: false,
+      });
+    }
+  };
+  const loginHandler = (username, password) => {
+    const foundUser = Users.filter(item =>{
+      return username== item.username && password==item.password
+    });
+    if(foundUser.length==0){
+      Alert.alert('Invalid user','Username or password is incorect.',[
+        {text:'Ok'}
+      ])
+      return;
+    }
+    signIn(foundUser);
   };
 
   return (
@@ -58,14 +99,15 @@ const SignInScreen = ({ navigation }) => {
         <Text style={styles.text_header}>Welcome!</Text>
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
-        <Text style={styles.text_footer}>Email</Text>
+        <Text style={styles.text_footer}>Username</Text>
         <View style={styles.action}>
-          <FontAwesome name="envelope" color="#05375a" size={20} />
+          <FontAwesome name="user" color="#05375a" size={20} />
           <TextInput
-            placeholder="Your E-mail"
+            placeholder="Your Username"
             style={styles.textInput}
             autoCapitalize="none"
             onChangeText={(val) => textInputChange(val)}
+            onEndEditing={(e) => handleValidUser(e.nativeEvent.text)}
           />
           {data.check_textInputChange ? (
             <Animatable.View animation="bounceIn">
@@ -73,7 +115,11 @@ const SignInScreen = ({ navigation }) => {
             </Animatable.View>
           ) : null}
         </View>
-
+        {data.isValidUser ? null : (
+          <Animatable.View animation="fadeInLeft" duration={500}>
+            <Text style={styles.errorMsg}> Username must be 4 char long.</Text>
+          </Animatable.View>
+        )}
         <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
         <View style={styles.action}>
           <FontAwesome name="lock" color="#05375a" size={20} />
@@ -92,12 +138,18 @@ const SignInScreen = ({ navigation }) => {
             )}
           </TouchableOpacity>
         </View>
+        {data.isValidPassword ? null : (
+          <Animatable.View animation="fadeInLeft" duration={500}>
+            <Text style={styles.errorMsg}> Password must be 8 char long.</Text>
+          </Animatable.View>
+        )}
+
         <View style={{ paddingTop: 20 }}>
           <Button
             style={styles.signIn}
             title="Sign in"
             onPress={() => {
-              signIn();
+              loginHandler(data.username, data.password);
             }}
           />
         </View>
@@ -121,7 +173,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 2,
     justifyContent: "flex-end",
-    alignItems:"center",
+    alignItems: "center",
     paddingBottom: 50,
     paddingHorizontal: 20,
   },

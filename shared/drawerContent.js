@@ -1,11 +1,9 @@
 import { DrawerContentScrollView } from "@react-navigation/drawer";
-import react, { Component } from "react";
 import React from 'react';
 import { View,StyleSheet, Dimensions,Image} from 'react-native';
 import {DrawerItem} from '@react-navigation/drawer';
-import {Avatar,Title,Caption,Paragraph,Drawer,Text,TouchableRipple,Switch} from 'react-native-paper'
+import {Title,Caption,Drawer,Text,TouchableRipple,Switch,useTheme} from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { RootDrawerNavigator } from "../Routes/drawer";
 import {AuthContext}from '../components/context';
 
 
@@ -16,12 +14,8 @@ const dvHeight = Dimensions.get("window").height / 100;
 
 const DrawerContent=(props)=>{
 
-    const {signOut}=React.useContext(AuthContext);
-    const[cDarkTheme,setcDarkTheme] =react.useState(false);
-
-    const toggleTheme=()=>{
-        setcDarkTheme(!cDarkTheme);
-    }
+    const {signOut,toggleTheme}=React.useContext(AuthContext);
+    const paperTheme =useTheme();
 
     return (
       <View style={{ flex: 1 }}>
@@ -102,7 +96,7 @@ const DrawerContent=(props)=>{
                   Dark Theme
                 </Text>
                 <View pointerEvents="none" style={{ paddingLeft: 20 }}>
-                  <Switch value={cDarkTheme} color="#E36413" />
+                  <Switch value={paperTheme.dark} color="#E36413" />
                 </View>
               </View>
             </TouchableRipple>

@@ -1,8 +1,11 @@
 import React from "react";
 import { Text, View, StyleSheet ,Button,Image} from "react-native";
 import { globalStyles } from "../styles/global";
+import {useTheme} from 'react-native-paper';
 
 export default function About() {
+  const {colors} =useTheme();
+  const theme = useTheme();
     
   return (
     <View>
@@ -19,7 +22,7 @@ export default function About() {
         </Text>
         </View>
         <View style={globalStyles.parragrapg}>
-          <Text style={{ fontSize: 15, textAlign: "center" }}>
+          <Text style={{ fontSize: 15, textAlign: "center" ,color:colors.text}}>
             This app ir for navigation in citys, it will create the fastest rout
             to your destination.
         </Text>
