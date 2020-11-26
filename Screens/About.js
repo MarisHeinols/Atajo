@@ -1,31 +1,48 @@
 import React from "react";
-import { Text, View, StyleSheet ,Button,Image} from "react-native";
+import { Text, View, StyleSheet, Button, Image } from "react-native";
+import { BottomNavigation } from "react-native-paper";
 import { globalStyles } from "../styles/global";
-import {useTheme} from 'react-native-paper';
 
 export default function About() {
-  const {colors} =useTheme();
-  const theme = useTheme();
-    
+
   return (
     <View>
       <View style={styles.banner}>
         <Text style={styles.bannerTXT}>About</Text>
       </View>
       <View style={globalStyles.container}>
-        <View>
+
+        <View> 
           <Image source={require("../assets/AtajoNoBackground.png")} style={{ height: 100, width: 100 }} />
         </View>
-        <View style={globalStyles.parragrapg}>
-          <Text style={{ fontSize: 19, fontWeight: "bold", color: "#E36413" }}>
-            Hello from Atajo team.
+        <View>
+          <Text style={styles.OragreTXT}>
+            Hello from Atajo team!
         </Text>
         </View>
-        <View style={globalStyles.parragrapg}>
-          <Text style={{ fontSize: 15, textAlign: "center" ,color:colors.text}}>
-            This app ir for navigation in citys, it will create the fastest rout
-            to your destination.
+        <View style={{ paddingBottom: 30, paddingTop: 20}}>
+          <Text style={{ fontSize: 15, color: "black", flexDirection: "row" }}>
+            Copyright © 2020 Atajo team. All rights reserved.
         </Text>
+        </View>
+        <View style={{ paddingBottom: 70, paddingTop: 20}}>
+          <View style={styles.dataField}>
+            <View style={globalStyles.parragrapg}>
+              <Text style={{ fontSize: 15, textAlign: "center", color: "#E36413" }}>
+                This  app is designed for pedestrian use in a city to find the shortest route from
+                point A to point B, providing scenic attractions along the way.
+          </Text>
+            </View>
+          </View>
+        </View>
+        <View style={styles.banner}>
+          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Made by</Text>
+          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Māris Heinols</Text>
+          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Egija Graudiņa</Text>
+          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Aleksandrs Barbins</Text>
+          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Roberts Ronins Puķītis</Text>
+          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Rūdis Rūdolfs Dūmiņš</Text>
+          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Mārtiņš Jēkabs Ausmanis</Text>
         </View>
       </View>
     </View>
@@ -45,6 +62,17 @@ const styles = StyleSheet.create({
   },
   bannerTXT: {
     color: "white",
-    fontWeight:'500',
-  }
+    fontFamily: "Arimo-bold",
+  },
+  OragreTXT: {
+    fontSize: 30,
+    textAlign: "center",
+    color: "#E36413",
+  },
+  dataField: {
+    width: 290,
+    borderWidth: 3,
+    borderColor: "#E36413",
+    alignItems: "center",
+  },
 });
