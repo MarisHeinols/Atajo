@@ -1,14 +1,11 @@
 import React from "react";
 import { Text, View, StyleSheet, Button, Image } from "react-native";
 import { globalStyles } from "../styles/global";
-import{useTheme} from '@react-navigation/native';
-
+import { useTheme } from "@react-navigation/native";
 
 export default function About() {
-  const {colors} = useTheme();
-  const theme=useTheme();
-
-
+  const { colors } = useTheme();
+  const theme = useTheme();
 
   return (
     <View>
@@ -16,38 +13,47 @@ export default function About() {
         <Text style={styles.bannerTXT}>About</Text>
       </View>
       <View style={globalStyles.container}>
-
-        <View> 
-          <Image source={require("../assets/AtajoNoBackground.png")} style={{ height: 100, width: 100 }} />
+        <View>
+          <Image
+            source={require("../assets/AtajoNoBackground.png")}
+            style={{ height: 100, width: 100 }}
+          />
         </View>
         <View>
-          <Text style={styles.OragreTXT}>
-            Hello from Atajo team!
-        </Text>
+          <Text style={styles.OragreTXT}>Hello from Atajo team!</Text>
         </View>
-        <View style={{ paddingBottom: 30, paddingTop: 20}}>
-          <Text style={{ fontSize: 15, flexDirection: "row",color:theme.dark?"white":"black" }}>
+        <View style={{ paddingBottom: 30, paddingTop: 20 }}>
+          <Text
+            style={{
+              fontSize: 15,
+              flexDirection: "row",
+              color: theme.dark ? "white" : "black",
+            }}
+          >
             Copyright © 2020 Atajo team. All rights reserved.
-        </Text>
+          </Text>
         </View>
-        <View style={{ paddingBottom: 70, paddingTop: 20}}>
+        <View style={{ paddingBottom: 70, paddingTop: 20 }}>
           <View style={styles.dataField}>
             <View style={globalStyles.parragraph}>
-              <Text style={{ fontSize: 15, textAlign: "center", color: "#E36413" }}>
-                This  app is designed for pedestrian use in a city to find the shortest route from
-                point A to point B, providing scenic attractions along the way.
-          </Text>
+              <Text
+                style={{ fontSize: 15, textAlign: "center", color: "#E36413" }}
+              >
+                This app is designed for pedestrian use in a city to find the
+                shortest route from point A to point B, providing scenic
+                attractions along the way.
+              </Text>
             </View>
           </View>
         </View>
-        <View style={styles.banner}>
+        <View style={styles.bannerBottom}>
           <Text style={styles.OragreTXT}>Made by</Text>
-          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Māris Heinols</Text>
-          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Egija Graudiņa</Text>
-          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Aleksandrs Barbins</Text>
-          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Roberts Ronins Puķītis</Text>
-          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Rūdis Rūdolfs Dūmiņš</Text>
-          <Text style={{color: "grey",fontFamily: "Arimo-bold",}}>Mārtiņš Jēkabs Ausmanis</Text>
+          <Text style={{ color: "grey" }}>Māris Heinols</Text>
+          <Text style={{ color: "grey" }}>Egija Graudiņa</Text>
+          <Text style={{ color: "grey" }}>Aleksandrs Barbins</Text>
+          <Text style={{ color: "grey" }}>Roberts Ronins Puķītis</Text>
+          <Text style={{ color: "grey" }}>Rūdis Rūdolfs Dūmiņš</Text>
+          <Text style={{ color: "grey" }}>Mārtiņš Jēkabs Ausmanis</Text>
         </View>
       </View>
     </View>
@@ -67,7 +73,7 @@ const styles = StyleSheet.create({
   },
   bannerTXT: {
     color: "white",
-    fontFamily: "Arimo-bold",
+    fontWeight:'500'
   },
   OragreTXT: {
     fontSize: 30,
@@ -82,11 +88,21 @@ const styles = StyleSheet.create({
     borderColor: "#E36413",
     alignItems: "center",
   },
-  parragraph:{
-    alignItems:"center",
-    marginVertical:8,
-    lineHeight:20,
-    width:'70%',
-    paddingTop:20,
-  }
+  parragraph: {
+    alignItems: "center",
+    marginVertical: 8,
+    lineHeight: 20,
+    width: "70%",
+    paddingTop: 20,
+  },
+  bannerBottom: {
+    width: "100%",
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderBottomWidth: 1,
+    borderColor: "#5F0F40",
+    backgroundColor: "#5F0F40",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });

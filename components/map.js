@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
-import {StyleSheet,Dimensions} from 'react-native';
+import {StyleSheet,Dimensions,Text,TextInput, Platform} from 'react-native';
 import {useTheme} from 'react-native-paper';
+import { View } from 'react-native-animatable';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
 let { width, height } = Dimensions.get("window");
@@ -200,29 +202,50 @@ const Map =()=>{
     });
     const theme=useTheme();
     return (
-      <MapView
-        provider={PROVIDER_GOOGLE}
-        style={styles.map}
-        customMapStyle={theme.dark ? mapDarkStyle : mapStandartStyle}
-        loadingEnabled={true}
-        showsUserLocation followsUserLocation
-        region={{
-          latitude: latitude,
-          longitude: longitude,
-          latitudeDelta:latitude_Delta,
-          longitudeDelta:longitude_Delta,
-        }}
-      >
-      
-
-      </MapView>
+      <View>
+        <MapView
+          provider={PROVIDER_GOOGLE}
+          style={styles.map}
+          customMapStyle={theme.dark ? mapDarkStyle : mapStandartStyle}
+          loadingEnabled={true}
+          showsUserLocation
+          followsUserLocation
+          region={{
+            latitude: latitude,
+            longitude: longitude,
+            latitudeDelta: latitude_Delta,
+            longitudeDelta: longitude_Delta,
+          }}
+        ></MapView>
+        <View style={styles.serchBox}>
+          <TextInput 
+            placeholder="Search here"
+            placeholderTextColor="#000"
+            autoCapitalize='none'
+            style={{flex:1,padding:0,fontWeight:'500'}}
+          />
+          <Icon name="magnify" size="20"/>
+        </View>
+      </View>
     );
 }
 const styles = StyleSheet.create({
-    map:{
-       height:height,
-       width:width,
-       
-    }
-})
+  map: {
+    height: height,
+    width: width,
+  },
+  serchBox: {
+    position: "absolute",
+    marginTop: Platform.os == "ios" ? 40 : 20,
+    flexDirection: "row",
+    backgroundColor: "white",
+    width: "90%",
+    alignSelf: "center",
+    borderRadius: 8,
+    padding: 10,
+    elevation: 10,
+    borderWidth: 2,
+    borderColor: "#E36413",
+  },
+});
 export default Map;
