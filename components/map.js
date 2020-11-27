@@ -224,7 +224,7 @@ const Map =()=>{
             autoCapitalize='none'
             style={{flex:1,padding:0,fontWeight:'500'}}
           />
-          <Icon name="magnify" size="20"/>
+          <Icon name="magnify" size={20} style={{paddingTop:2}}/>
         </View>
       </View>
     );
@@ -246,6 +246,8 @@ const styles = StyleSheet.create({
     elevation: 10,
     borderWidth: 2,
     borderColor: "#E36413",
+    justifyContent:"center",
+    alignItems:"center",
   },
 });
 export default Map;
