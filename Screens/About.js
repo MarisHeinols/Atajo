@@ -1,9 +1,14 @@
 import React from "react";
 import { Text, View, StyleSheet, Button, Image } from "react-native";
-import { BottomNavigation } from "react-native-paper";
 import { globalStyles } from "../styles/global";
+import{useTheme} from '@react-navigation/native';
+
 
 export default function About() {
+  const {colors} = useTheme();
+  const theme=useTheme();
+
+
 
   return (
     <View>
@@ -21,7 +26,7 @@ export default function About() {
         </Text>
         </View>
         <View style={{ paddingBottom: 30, paddingTop: 20}}>
-          <Text style={{ fontSize: 15, color: "black", flexDirection: "row" }}>
+          <Text style={{ fontSize: 15, flexDirection: "row",color:theme.dark?"white":"black" }}>
             Copyright © 2020 Atajo team. All rights reserved.
         </Text>
         </View>

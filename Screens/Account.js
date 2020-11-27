@@ -1,7 +1,5 @@
 import React from "react";
 import { Text, View, StyleSheet ,Image} from "react-native";
-import { ceil } from "react-native-reanimated";
-import { globalStyles } from "../styles/global";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 

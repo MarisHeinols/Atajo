@@ -15,8 +15,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function App() {
 
   const [cDarkTheme, setcDarkTheme] = React.useState(false);
-  //const [isLoading,setIsLoading]=React.useState(true);
-  //const [userToken,setUserToken]=React.useState(null);
+
 
   const initalLoginState={
     isLoading:true,

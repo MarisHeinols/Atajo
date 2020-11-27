@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, View, FlatList, Image, Text } from 'react-native';
-import { ceil } from "react-native-reanimated";
+
 
 
 export default function Friends() {
