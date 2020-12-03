@@ -50,20 +50,23 @@ export default function Acount({navigation}) {
             </View>
           </View>
         </TouchableOpacity>
-        <View style={styles.Box}>
-          <Icon
-            name="map-marker"
-            style={{
-              color: "#E36413",
-              fontSize: 20,
-              paddingLeft: 10,
-              paddingRight: 70,
-            }}
-          />
-          <View style={{ alignItems: "center", justifyContent: "center" }}>
-            <Text style={styles.boxText}>Favorite places</Text>
+        <TouchableOpacity
+        onPress={()=>navigation.navigate("Favorite places")}>
+          <View style={styles.Box}>
+            <Icon
+              name="map-marker"
+              style={{
+                color: "#E36413",
+                fontSize: 20,
+                paddingLeft: 10,
+                paddingRight: 70,
+              }}
+            />
+            <View style={{ alignItems: "center", justifyContent: "center" }}>
+              <Text style={styles.boxText}>Favorite places</Text>
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
         <View style={styles.Box}>
           <Icon
             name="cogs"

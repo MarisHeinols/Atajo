@@ -6,7 +6,7 @@ import About from "../Screens/About";
 import Friends from "../Screens/Friends";
 import Header from "../shared/header";
 import Achevemnt from '../Screens/Achevment';
-
+import FavoriteScreen from '../Screens/FavoritePlaces';
 
 const acountStack = ({ navigation }) => {
   const Stack = createStackNavigator();
@@ -45,8 +45,12 @@ const acountStack = ({ navigation }) => {
       <Stack.Screen
         name={"Achements"}
         component={Achevemnt}
-        options={{headerTitle:false}}
-        
+        options={{ headerTitle: false }}
+      />
+      <Stack.Screen
+        name={"Favorite places"}
+        component={FavoriteScreen}
+        options={{ headerTitle: false }}
       />
     </Stack.Navigator>
   );
