@@ -1,10 +1,11 @@
 import React from "react";
-import { Text, View, StyleSheet ,Image} from "react-native";
+import { Text, View, StyleSheet ,Image,TouchableOpacity} from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 
 
-export default function Acount() {
+
+export default function Acount({navigation}) {
   return (
     <View>
       <View style={styles.banner}>
@@ -33,20 +34,22 @@ export default function Acount() {
             </Text>
           </View>
         </View>
-        <View style={styles.Box}>
-          <Icon
-            name="trophy"
-            style={{
-              color: "#E36413",
-              fontSize: 20,
-              paddingLeft: 10,
-              paddingRight: 70,
-            }}
-          />
-          <View style={{ alignItems: "center", justifyContent: "center" }}>
-            <Text style={styles.boxText}>Achievements</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("Achements")}>
+          <View style={styles.Box}>
+            <Icon
+              name="trophy"
+              style={{
+                color: "#E36413",
+                fontSize: 20,
+                paddingLeft: 10,
+                paddingRight: 70,
+              }}
+            />
+            <View style={{ alignItems: "center", justifyContent: "center" }}>
+              <Text style={styles.boxText}>Achievements</Text>
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
         <View style={styles.Box}>
           <Icon
             name="map-marker"

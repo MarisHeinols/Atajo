@@ -5,6 +5,7 @@ import Account from "../Screens/Account";
 import About from "../Screens/About";
 import Friends from "../Screens/Friends";
 import Header from "../shared/header";
+import Achevemnt from '../Screens/Achevment';
 
 
 const acountStack = ({ navigation }) => {
@@ -40,6 +41,12 @@ const acountStack = ({ navigation }) => {
         name={"Friends"}
         component={Friends}
         options={{ title: "Friends" }}
+      />
+      <Stack.Screen
+        name={"Achements"}
+        component={Achevemnt}
+        options={{headerTitle:false}}
+        
       />
     </Stack.Navigator>
   );
