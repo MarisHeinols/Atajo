@@ -76,7 +76,7 @@ export default function Acount() {
       <FlatList
         data={people}
         renderItem={({ item }) => (
-          <View style={{ paddingTop: 20 }}>
+          <View style={{ paddingTop: 20,alignItems:"center" }}>
             <View style={styles.achInfoBox} backgroundColor={item.color}>
               <View style={styles.achPresentation}>
                 <Icon name={item.iconName} size={40} />
@@ -114,8 +114,8 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   achInfoBox: {
-    width: 400,
-    height: 80,
+    width: '99%',
+    aspectRatio:10/2,
     flexDirection: "row",
     alignItems: "center",
     justifyContent:"space-evenly",
@@ -123,6 +123,8 @@ const styles = StyleSheet.create({
     borderWidth:1,
     borderColor: "#D8D8D8",
     borderRadius:20,
+    
+    
   },
   achDetails: {
     justifyContent: "center",

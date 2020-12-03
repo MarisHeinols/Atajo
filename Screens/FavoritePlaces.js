@@ -61,7 +61,7 @@ export default function FavoritePlaces() {
       <FlatList
         data={places}
         renderItem={({ item }) => (
-          <View style={{ paddingTop: 20 }}>
+          <View style={{ paddingTop: 20,alignItems:"center" }}>
             <View style={styles.InfoBox}>
               <View style={styles.Presentation}>
                 <Icon name="pin" size={30} color="white" />
@@ -113,8 +113,8 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   InfoBox: {
-    width: 400,
-    height: 80,
+    width: "99%",
+    aspectRatio:10/2,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-evenly",
