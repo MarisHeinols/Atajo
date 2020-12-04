@@ -189,6 +189,7 @@ const Map =()=>{
     const longitude_Delta = latitude_Delta * aspect_Ratio;
     const [longitude,setLongitude]=useState();
     const [latitude,setLatitude]=useState();
+
     useEffect(()=>{
         function setPosition({coords:{latitude,longitude}}){
             setLongitude(longitude);
@@ -202,6 +203,7 @@ const Map =()=>{
     });
     const theme=useTheme();
     return (
+      
       <View>
         <MapView
           provider={PROVIDER_GOOGLE}
