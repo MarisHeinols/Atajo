@@ -203,7 +203,6 @@ const Map =()=>{
     });
     const theme=useTheme();
     return (
-      
       <View>
         <MapView
           provider={PROVIDER_GOOGLE}
@@ -213,20 +212,20 @@ const Map =()=>{
           showsUserLocation
           followsUserLocation
           region={{
-            latitude: latitude,
-            longitude: longitude,
+            latitude: latitude != null ? latitude : 25.42751,
+            longitude: longitude != null ? longitude : 57.54108,
             latitudeDelta: latitude_Delta,
             longitudeDelta: longitude_Delta,
           }}
         ></MapView>
         <View style={styles.serchBox}>
-          <TextInput 
+          <TextInput
             placeholder="Search here"
             placeholderTextColor="#000"
-            autoCapitalize='none'
-            style={{flex:1,padding:0,fontWeight:'500'}}
+            autoCapitalize="none"
+            style={{ flex: 1, padding: 0, fontWeight: "500" }}
           />
-          <Icon name="magnify" size={20} style={{paddingTop:2}}/>
+          <Icon name="magnify" size={20} style={{ paddingTop: 2 }} />
         </View>
       </View>
     );
