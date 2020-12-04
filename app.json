@@ -27,10 +27,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.marish1.Atajo"
       
+      "package": "com.marish1.Atajo",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDGPOO9jMK4d-28ONv7ewLQPOKkksBWumQ"
+        }
+      }
       
-    
     },
     "web": {
       "favicon": "./assets/favicon.png"
