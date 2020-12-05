@@ -18,8 +18,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "Atajo",
-      "buildNumber": "1.0.0"
+      "bundleIdentifier": "com.marish1.Atajo",
+      "buildNumber": "1.0.0",
+      "config": {
+        "googleMapsApiKey": "AIzaSyDutcvHZ-I2R2zsyAKLgjvvDmoOCGr-lqk"
+      }
       
     },
     "android": {
